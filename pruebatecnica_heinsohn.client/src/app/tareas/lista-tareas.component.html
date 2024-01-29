@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-12">
+    <mat-card>
+      <mat-card-header>
+      </mat-card-header>
+      <mat-card-content>
+        <button mat-raised-button color="primary" class="m-t-8" (click)="nuevaTarea(0)">Nueva Tarea</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="titulo">
+        <mat-header-cell *matHeaderCellDef> Titulo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.titulo}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="descripcion">
+        <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.descripcion}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="estado">
+        <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.estado}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="fecha_Movimiento">
+        <mat-header-cell *matHeaderCellDef> Ultima Actualización </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.fecha_Movimiento}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Opción</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-button (click)="nuevaTarea(row.iD_Tarea)">Editar</button>
+          <button mat-button (click)="eliminarTarea(row.iD_Tarea)">Eliminar</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

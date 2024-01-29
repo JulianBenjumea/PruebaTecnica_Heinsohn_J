@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:4200",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\Users\\julian.benjumea\\source\\repos\\PruebaTecnica_Heinsohn\\PruebaTecnica_Heinsohn.Server\\..\\pruebatecnica_heinsohn.client",
+"MaxTimeoutInSeconds": "120"
+}
+}

@@ -1,0 +1,34 @@
+<h1 id="tableLabel">Nuevo Usuario</h1>
+<div class="row">
+  <div class="col-md-12">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="reactiveForm1">
+          <div class="col-md-6">
+            <mat-form-field>
+              <mat-label>Usuario:</mat-label>
+              <input matInput formControlName="nombre" class="inputmodelcss" required>
+              <mat-error *ngIf="reactiveForm1.get('nombre')?.invalid">
+                {{'validations.required'}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <mat-label>Contraseña:</mat-label>
+              <input matInput type="password" class="inputmodelcss"
+                     formControlName="contraseña" required>
+              <mat-error *ngIf="reactiveForm1.get('contraseña')?.invalid">
+                {{'validations.required'}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-2">
+            <button mat-raised-button color="primary" style="width:150px" class="m-t-8" (click)="Guardar()">Ingresar</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
